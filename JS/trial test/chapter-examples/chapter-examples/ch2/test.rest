@@ -1,0 +1,56 @@
+### Health check
+GET http://localhost:3000/health
+
+###
+
+### Create check
+POST http://localhost:3000/health
+Content-Type: application/json
+
+{
+    "name": "Azlan",
+    "userId": "u4",
+    "type": "document",
+    "status": "pending",
+    "score": null
+}
+
+###
+
+### Get check by ID (c1 - complete)
+GET http://localhost:3000/health/c1
+
+###
+
+### Get check by ID (c2 - pending)
+GET http://localhost:3000/health/c2
+
+###
+
+### Get check by ID (c4 - failed)
+GET http://localhost:3000/health/c4
+
+###
+
+### Get check by ID (non-existing)
+GET http://localhost:3000/health/c99
+
+###
+
+### Get all checks
+GET http://localhost:3000/checks
+
+###
+
+### Get pending checks
+GET http://localhost:3000/checks?status=pending
+
+###
+
+### Get complete checks
+GET http://localhost:3000/checks?status=complete
+
+###
+
+### Get failed checks
+GET http://localhost:3000/checks?status=failed
